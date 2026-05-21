@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SolidGround</title>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -38,21 +38,40 @@
       border-radius: 12px;
     }
   </style>
+
 </head>
 
 <body>
 
-  <nav class="navbar navbar-dark bg-dark mb-4">
-    <div class="container-fluid">
-      <span class="navbar-brand mb-0 h1">Infy App Challenge Showcase</span>
+  <!-- NAVBAR -->
+  <header>
+    <nav class="navbar">
+      <div class="navbar-left">
+      </div>
+
       <ul class="navbar-right">
         <li><a href="index.html">Home</a></li>
         <li><a href="projects.html">Projects</a></li>
         <li><a href="cfus.html">CFUs</a></li>
         <li><a href="contact.html">Contacts</a></li>
       </ul>
-    </div>
-  </nav>
+    </nav>
+  </header>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="resource-card">
+    <p>© <span id="year"></span> Quinn Oudkerk | Junior Fall Portfolio</p>
+  </footer>
+
+  <script>
+    // Auto-updates the year in the footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
 
   <div class="container text-center">
 
