@@ -1,87 +1,218 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SolidGround</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>SolidGround | Infy App Challenge</title>
+
+  <!-- Bootstrap -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
 
   <style>
     body {
       background-color: #f4f8fc;
       font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
     }
 
+    /* NAVBAR */
+    .navbar {
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .nav-link {
+      margin-left: 15px;
+      transition: 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: #8ec5ff !important;
+    }
+
+    /* HERO */
     .hero {
-      background-color: #8ec5ff;
+      background: linear-gradient(135deg, #8ec5ff, #4a7fcf);
       color: white;
-      padding: 60px 20px;
+      padding: 70px 20px;
       border-radius: 20px;
       margin-bottom: 40px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
     }
 
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+
+    /* SECTION CARDS */
     .section {
       background: white;
       padding: 30px;
-      border-radius: 15px;
+      border-radius: 18px;
       margin-bottom: 25px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease;
+    }
+
+    .section:hover {
+      transform: translateY(-5px);
     }
 
     h3 {
       color: #4a7fcf;
       margin-bottom: 15px;
+      font-weight: bold;
     }
 
-    iframe, video {
+    iframe,
+    video {
       border-radius: 12px;
+    }
+
+    ul {
+      text-align: left;
+      display: inline-block;
+    }
+
+    footer {
+      color: gray;
+      padding: 20px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      .hero {
+        padding: 40px 15px;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      iframe {
+        height: 300px !important;
+      }
+
+      video {
+        width: 100%;
+      }
+
+      .nav-link {
+        display: block;
+        margin: 10px 0;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <nav class="navbar navbar-dark bg-dark mb-4">
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
     <div class="container-fluid">
-      <span class="navbar-brand mb-0 h1">Infy App Challenge Showcase</span>
+
+      <a class="navbar-brand fw-bold" href="#">
+        🌟 SolidGround
+      </a>
+
+      <div>
+        <a class="nav-link d-inline text-white" href="#pitch">Pitch</a>
+        <a class="nav-link d-inline text-white" href="#features">Features</a>
+        <a class="nav-link d-inline text-white" href="#prototype">Prototype</a>
+        <a class="nav-link d-inline text-white" href="#demo">Demo</a>
+      </div>
+
     </div>
   </nav>
 
+  <!-- MAIN CONTAINER -->
   <div class="container text-center">
 
+    <!-- HERO -->
     <div class="hero">
       <h1>🌟 SOLIDGROUND</h1>
-      <p><em>"See your future before inflation changes it."</em></p>
+
+      <p>
+        <em>"See your future before inflation changes it."</em>
+      </p>
+
+      <p>
+        Helping users make smarter financial decisions through inflation tracking,
+        budgeting tools, and future spending predictions.
+      </p>
     </div>
 
-    <div class="section">
+    <!-- PITCH -->
+    <div class="section" id="pitch">
       <h3>🎯 Pitch</h3>
+
       <p>
         SolidGround helps users understand how inflation affects their spending,
         savings, and future finances through budgeting tools and personalized predictions.
       </p>
     </div>
 
+    <!-- THEME -->
     <div class="section">
       <h3>🌍 Theme Implementation</h3>
+
       <p>
         Our app uses inflation tracking, spending analysis, and future projections
         to help users make smarter financial decisions before prices rise.
       </p>
     </div>
 
+    <!-- WHY WE BUILT THIS -->
     <div class="section">
       <h3>🧠 Why We Built This</h3>
+
       <p>
         We built SolidGround to make financial literacy simple, interactive,
-        and useful for people navigating an unpredictable economy. The goal is to make an app that has money saving methods. show low priced products and give you information on how to spend and keep money in the safest way possible.
+        and useful for people navigating an unpredictable economy.
+      </p>
+
+      <p>
+        Our goal is to help users save money by providing budgeting tools,
+        showing lower-cost products, and offering guidance on safer spending habits.
       </p>
     </div>
 
+    <!-- FEATURES -->
+    <div class="section" id="features">
+      <h3>⚡ Key Features</h3>
+
+      <ul>
+        <li>📈 Inflation tracking</li>
+        <li>💰 Budget planner</li>
+        <li>🛒 Smart shopping suggestions</li>
+        <li>📊 Future spending predictions</li>
+        <li>🧾 Savings recommendations</li>
+      </ul>
+    </div>
+
+    <!-- TEAM -->
+    <div class="section">
+      <h3>👥 Team Members</h3>
+
+      <p>
+        Elyssa Burrell – Frontend Design & Financial Research
+      </p>
+    </div>
+
+    <!-- SLIDE DECK -->
     <div class="section">
       <h3>📽️ Slide Deck</h3>
 
+      <!-- REPLACE WITH YOUR REAL GOOGLE SLIDE EMBED -->
       <iframe
         src="https://docs.google.com/presentation/d/e/2PACX-FAKE-GOOGLE-SLIDE/embed?start=false&loop=false&delayms=3000"
         width="100%"
@@ -91,9 +222,11 @@
       </iframe>
     </div>
 
-    <div class="section">
+    <!-- FIGMA -->
+    <div class="section" id="prototype">
       <h3>📱 Figma Prototype</h3>
 
+      <!-- REPLACE WITH YOUR REAL FIGMA EMBED -->
       <iframe
         style="border:1px solid #ccc"
         width="100%"
@@ -103,8 +236,9 @@
       </iframe>
     </div>
 
-    <div class="section">
-      <h3>🎥 Demo Video (Optional)</h3>
+    <!-- DEMO -->
+    <div class="section" id="demo">
+      <h3>🎥 Demo Video</h3>
 
       <video width="80%" controls>
         <source src="demo.mp4" type="video/mp4">
@@ -113,6 +247,11 @@
     </div>
 
   </div>
+
+  <!-- FOOTER -->
+  <footer class="text-center mt-5 mb-4">
+    <p>© 2026 SolidGround Team | Infy App Challenge</p>
+  </footer>
 
 </body>
 </html>
