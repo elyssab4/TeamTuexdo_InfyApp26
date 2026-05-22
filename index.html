@@ -2,187 +2,438 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <title>SolidGround | Infy App Challenge</title>
+  <title>SolidGround | Inflation Intelligence</title>
 
   <!-- Bootstrap -->
   <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
     rel="stylesheet"
   />
 
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
   <style>
-    body {
-      background-color: #f4f8fc;
-      font-family: Arial, sans-serif;
-      scroll-behavior: smooth;
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Poppins', sans-serif;
+      background:
+      radial-gradient(circle at top left, #203a43, #0f2027);
+      color:white;
+      overflow-x:hidden;
+    }
+
+    html{
+      scroll-behavior:smooth;
     }
 
     /* NAVBAR */
-    .navbar {
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+
+    .navbar{
+      backdrop-filter: blur(12px);
+      background: rgba(0,0,0,0.45);
+      border-bottom:1px solid rgba(255,255,255,0.1);
     }
 
-    .nav-link {
-      margin-left: 15px;
-      transition: 0.3s ease;
+    .navbar-brand{
+      font-weight:700;
+      letter-spacing:1px;
+      font-size:1.5rem;
     }
 
-    .nav-link:hover {
-      color: #8ec5ff !important;
+    .nav-link{
+      color:white !important;
+      margin-left:18px;
+      transition:0.3s;
+      position:relative;
+    }
+
+    .nav-link:hover{
+      color:#4dd0ff !important;
+    }
+
+    .nav-link::after{
+      content:'';
+      width:0%;
+      height:2px;
+      background:#4dd0ff;
+      position:absolute;
+      left:0;
+      bottom:-5px;
+      transition:0.3s;
+    }
+
+    .nav-link:hover::after{
+      width:100%;
     }
 
     /* HERO */
-    .hero {
-      background: linear-gradient(135deg, #8ec5ff, #4a7fcf);
-      color: white;
-      padding: 70px 20px;
-      border-radius: 20px;
-      margin-bottom: 40px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+
+    .hero{
+      min-height:90vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      flex-direction:column;
+      padding:40px;
+      position:relative;
     }
 
-    .hero h1 {
-      font-size: 3rem;
-      font-weight: bold;
+    .hero::before{
+      content:"";
+      position:absolute;
+      width:500px;
+      height:500px;
+      background:rgba(77,208,255,0.15);
+      border-radius:50%;
+      filter:blur(120px);
+      top:-120px;
+      right:-100px;
     }
 
-    .hero p {
-      font-size: 1.2rem;
-      margin-top: 10px;
+    .hero h1{
+      font-size:5rem;
+      font-weight:700;
+      background:linear-gradient(to right,#4dd0ff,#ffffff);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
     }
 
-    /* SECTION CARDS */
-    .section {
-      background: white;
-      padding: 30px;
-      border-radius: 18px;
-      margin-bottom: 25px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      transition: transform 0.3s ease;
+    .hero p{
+      max-width:800px;
+      margin-top:20px;
+      font-size:1.2rem;
+      color:#d8ecff;
     }
 
-    .section:hover {
-      transform: translateY(-5px);
+    .hero-btn{
+      margin-top:35px;
+      padding:15px 35px;
+      border:none;
+      border-radius:50px;
+      background:linear-gradient(45deg,#4dd0ff,#0066ff);
+      color:white;
+      font-weight:600;
+      transition:0.3s;
+      text-decoration:none;
     }
 
-    h3 {
-      color: #4a7fcf;
-      margin-bottom: 15px;
-      font-weight: bold;
+    .hero-btn:hover{
+      transform:translateY(-4px) scale(1.05);
+      box-shadow:0 10px 25px rgba(77,208,255,0.4);
+      color:white;
     }
+
+    /* TICKER */
+
+    .ticker{
+      width:100%;
+      overflow:hidden;
+      white-space:nowrap;
+      background:#ff4d4d;
+      padding:10px 0;
+      font-weight:600;
+    }
+
+    .ticker span{
+      display:inline-block;
+      padding-left:100%;
+      animation:ticker 20s linear infinite;
+    }
+
+    @keyframes ticker{
+      0%{
+        transform:translateX(0);
+      }
+      100%{
+        transform:translateX(-100%);
+      }
+    }
+
+    /* SECTIONS */
+
+    .section{
+      background:rgba(255,255,255,0.08);
+      border:1px solid rgba(255,255,255,0.1);
+      backdrop-filter:blur(15px);
+      border-radius:25px;
+      padding:40px;
+      margin-bottom:40px;
+      transition:0.4s;
+      box-shadow:0 10px 30px rgba(0,0,0,0.25);
+    }
+
+    .section:hover{
+      transform:translateY(-8px);
+    }
+
+    h2{
+      color:#4dd0ff;
+      margin-bottom:20px;
+      font-weight:700;
+    }
+
+    /* STATS */
+
+    .stat-card{
+      background:linear-gradient(
+      135deg,
+      rgba(255,255,255,0.08),
+      rgba(255,255,255,0.03)
+      );
+
+      border-radius:20px;
+      padding:30px;
+      text-align:center;
+      transition:0.3s;
+      height:100%;
+    }
+
+    .stat-card:hover{
+      transform:scale(1.05);
+      box-shadow:0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    .stat-number{
+      font-size:3rem;
+      font-weight:700;
+      color:#4dd0ff;
+    }
+
+    /* FEATURE LIST */
+
+    .feature-list{
+      list-style:none;
+      padding:0;
+    }
+
+    .feature-list li{
+      padding:14px;
+      margin:10px 0;
+      border-radius:12px;
+      background:rgba(255,255,255,0.05);
+      transition:0.3s;
+    }
+
+    .feature-list li:hover{
+      background:rgba(77,208,255,0.15);
+      transform:translateX(10px);
+    }
+
+    /* TEAM */
+
+    .team-btn{
+      border-radius:50px;
+      padding:12px 28px;
+      border:1px solid #4dd0ff;
+      color:white;
+      text-decoration:none;
+      transition:0.3s;
+    }
+
+    .team-btn:hover{
+      background:#4dd0ff;
+      color:black;
+      transform:translateY(-3px);
+    }
+
+    /* IFRAME */
 
     iframe,
-    video {
-      border-radius: 12px;
+    video{
+      border-radius:20px;
+      border:none;
+      overflow:hidden;
     }
 
-    ul {
-      text-align: left;
-      display: inline-block;
-    }
+    /* FOOTER */
 
-    footer {
-      color: gray;
-      padding: 20px;
-    }
-
-    /* TEAM BUTTONS */
-    .btn-lg {
-      border-radius: 30px;
-      padding: 12px 25px;
-      transition: 0.3s ease;
-    }
-
-    .btn-lg:hover {
-      transform: scale(1.05);
+    footer{
+      padding:40px 20px;
+      text-align:center;
+      color:#9ab7d3;
     }
 
     /* MOBILE */
-    @media (max-width: 768px) {
-      .hero {
-        padding: 40px 15px;
+
+    @media(max-width:768px){
+
+      .hero h1{
+        font-size:3rem;
       }
 
-      .hero h1 {
-        font-size: 2rem;
+      .hero p{
+        font-size:1rem;
       }
 
-      iframe {
-        height: 300px !important;
-      }
-
-      video {
-        width: 100%;
-      }
-
-      .nav-link {
-        display: block;
-        margin: 10px 0;
-      }
     }
+
   </style>
 </head>
 
 <body>
 
   <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
-    <div class="container-fluid">
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
 
-      <a class="navbar-brand fw-bold" href="#">
-        🌟 SolidGround
+      <a class="navbar-brand" href="#">
+        💸 SolidGround
       </a>
 
       <div>
-        <a class="nav-link d-inline text-white" href="#pitch">Pitch</a>
-        <a class="nav-link d-inline text-white" href="#features">Features</a>
-        <a class="nav-link d-inline text-white" href="#prototype">Prototype</a>
-        <a class="nav-link d-inline text-white" href="#demo">Demo</a>
+        <a class="nav-link d-inline" href="#about">About</a>
+        <a class="nav-link d-inline" href="#features">Features</a>
+        <a class="nav-link d-inline" href="#stats">Stats</a>
+        <a class="nav-link d-inline" href="#prototype">Prototype</a>
       </div>
 
     </div>
   </nav>
 
-  <!-- TEAM MEMBER LINKS -->
-  <div class="container mb-4">
+  <!-- INFLATION TICKER -->
+  <div class="ticker">
+    <span>
+      📈 Grocery prices rising • Rent increasing • Gas prices fluctuating • Inflation impacts savings • Smart budgeting matters more than ever •
+    </span>
+  </div>
 
+  <!-- HERO -->
+  <section class="hero">
+
+    <h1>SOLIDGROUND</h1>
+
+    <p>
+      Predict tomorrow’s prices today.
+      Our platform helps people fight inflation using
+      AI-driven budgeting, smart spending analysis,
+      and future cost forecasting.
+    </p>
+
+    <a href="#features" class="hero-btn">
+      Explore Features →
+    </a>
+
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <div class="container">
+
+    <!-- ABOUT -->
+    <div class="section" id="about">
+
+      <h2>🌍 Why SolidGround Exists</h2>
+
+      <p>
+        Inflation changes lives silently.
+        The cost of food, rent, transportation,
+        and essentials rises faster than most people realize.
+      </p>
+
+      <p>
+        SolidGround helps users stay ahead by visualizing
+        inflation trends, comparing smarter alternatives,
+        and forecasting future expenses before prices rise.
+      </p>
+
+    </div>
+
+    <!-- STATS -->
+    <div class="section" id="stats">
+
+      <h2>📊 Inflation Impact</h2>
+
+      <div class="row g-4">
+
+        <div class="col-md-4">
+          <div class="stat-card">
+            <div class="stat-number">+18%</div>
+            <p>Average grocery increase over recent years</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="stat-card">
+            <div class="stat-number">$300+</div>
+            <p>Extra yearly spending from hidden inflation</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="stat-card">
+            <div class="stat-number">24/7</div>
+            <p>Real-time financial tracking and insights</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- FEATURES -->
+    <div class="section" id="features">
+
+      <h2>⚡ Smart Features</h2>
+
+      <ul class="feature-list">
+
+        <li>📈 Live inflation tracking dashboard</li>
+
+        <li>🧠 AI-powered future spending predictions</li>
+
+        <li>💰 Personalized budgeting recommendations</li>
+
+        <li>🛒 Smart shopping alternatives for lower costs</li>
+
+        <li>📊 Financial habit analytics</li>
+
+        <li>🔔 Price spike alerts before costs rise</li>
+
+      </ul>
+
+    </div>
+
+    <!-- TEAM -->
     <div class="section text-center">
 
-      <h3>👥 Meet The Team</h3>
+      <h2>👥 Meet The Team</h2>
 
       <div class="d-flex justify-content-center flex-wrap gap-3 mt-4">
 
-        <!-- TEAM MEMBER 1 -->
-       <a
+        <a
           href="https://khlye7.github.io/khloes-profilo/"
           target="_blank"
-          class="btn btn-outline-primary btn-lg">
+          class="team-btn">
           Khole
         </a>
 
-        <!-- TEAM MEMBER 2 -->
         <a
-          href="https://yourportfolio2.com"
-          target="_blank"
-          class="btn btn-outline-primary btn-lg">
+          href="#"
+          class="team-btn">
           Quinn
         </a>
 
-        <!-- TEAM MEMBER 3 -->
         <a
           href="https://sveliz118.github.io/Jryr_PortfolioSAMPLE/"
           target="_blank"
-          class="btn btn-outline-primary btn-lg">
-          Stephaine
+          class="team-btn">
+          Stephanie
         </a>
 
-        <!-- TEAM MEMBER 4 -->
         <a
           href="https://elyssab4.github.io/JuniorFallPortfolio_EB/"
           target="_blank"
-          class="btn btn-outline-primary btn-lg">
+          class="team-btn">
           Elyssa
         </a>
 
@@ -190,116 +441,58 @@
 
     </div>
 
-  </div>
-
-  <!-- MAIN CONTAINER -->
-  <div class="container text-center">
-
-    <!-- HERO -->
-    <div class="hero">
-      <h1>🌟 SOLIDGROUND</h1>
-
-      <p>
-        <em>"See your future before inflation changes it."</em>
-      </p>
-
-      <p>
-        Helping users make smarter financial decisions through inflation tracking,
-        budgeting tools, and future spending predictions.
-      </p>
-    </div>
-
-    <!-- PITCH -->
-    <div class="section" id="pitch">
-      <h3>🎯 Pitch</h3>
-
-      <p>
-        SolidGround helps users understand how inflation affects their spending,
-        savings, and future finances through budgeting tools and personalized predictions.
-      </p>
-    </div>
-
-    <!-- THEME -->
+    <!-- SLIDES -->
     <div class="section">
-      <h3>🌍 Theme Implementation</h3>
 
-      <p>
-        Our app uses inflation tracking, spending analysis, and future projections
-        to help users make smarter financial decisions before prices rise.
-      </p>
-    </div>
+      <h2>📽️ Pitch Deck</h2>
 
-    <!-- WHY WE BUILT THIS -->
-    <div class="section">
-      <h3>🧠 Why We Built This</h3>
-
-      <p>
-        We built SolidGround to make financial literacy simple, interactive,
-        and useful for people navigating an unpredictable economy.
-      </p>
-
-      <p>
-        Our goal is to help users save money by providing budgeting tools,
-        showing lower-cost products, and offering guidance on safer spending habits.
-      </p>
-    </div>
-
-    <!-- FEATURES -->
-    <div class="section" id="features">
-      <h3>⚡ Key Features</h3>
-
-      <ul>
-        <li>📈 Inflation tracking</li>
-        <li>💰 Budget planner</li>
-        <li>🛒 Smart shopping suggestions</li>
-        <li>📊 Future spending predictions</li>
-        <li>🧾 Savings recommendations</li>
-      </ul>
-    </div>
-
-    <!-- SLIDE DECK -->
-    <div class="section">
-      <h3>📽️ Slide Deck</h3>
-
-      <!-- REPLACE WITH YOUR REAL GOOGLE SLIDE EMBED -->
       <iframe
         src="https://docs.google.com/presentation/d/e/2PACX-FAKE-GOOGLE-SLIDE/embed?start=false&loop=false&delayms=3000"
         width="100%"
-        height="480"
-        frameborder="0"
-        allowfullscreen>
+        height="500">
       </iframe>
+
     </div>
 
     <!-- FIGMA -->
     <div class="section" id="prototype">
-      <h3>📱 Figma Prototype</h3>
 
-      <!-- REPLACE WITH YOUR REAL FIGMA EMBED -->
+      <h2>📱 Figma Prototype</h2>
+
       <iframe
-        style="border:1px solid #ccc"
+        style="border:1px solid rgba(255,255,255,0.1)"
         width="100%"
-        height="600"
+        height="650"
         src="https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/proto/FAKE-PROTOTYPE"
         allowfullscreen>
       </iframe>
+
     </div>
 
-    <!-- DEMO -->
-    <div class="section" id="demo">
-      <h3>🎥 Demo Video</h3>
+    <!-- VIDEO -->
+    <div class="section">
 
-      <video width="80%" controls>
+      <h2>🎥 Product Demo</h2>
+
+      <video width="100%" controls>
         <source src="demo.mp4" type="video/mp4">
-        Your browser does not support the video tag.
       </video>
+
     </div>
 
   </div>
 
   <!-- FOOTER -->
-  <footer class="text-center mt-5 mb-4">
-    <p>© 2026 SolidGround Team | Infy App Challenge</p>
+  <footer>
+
+    <p>
+      © 2026 SolidGround | Built for the Infy App Challenge
+    </p>
+
+    <p>
+      “Financial stability starts with understanding inflation.”
+    </p>
+
   </footer>
 
 </body>
